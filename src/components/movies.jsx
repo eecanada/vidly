@@ -18,21 +18,34 @@ class Movies extends Component {
     return <ul> {this.state.movies.map((movie) => { return <li key={movie._id}> {movie.genre["name"]} </li> })}</ul>
   }
 
-  
 
+  getMovieStock(){
+    return <ul> {this.state.movies.map((movie)=>{return <li key={movie._id}> {movie.numberInStock} </li>})}</ul>
+  }
+
+  getMovieRate(){
+    return <ul> {this.state.movies.map((movie)=>{ return <li key={movie._id}> {movie.dailyRentalRate} </li>})}</ul>
+  }
+
+  getTotalMovieCount(){
+    return <p> Showing {this.state.movies.length} movies in the database</p>
+  }
+  
   render(){
-    return <table> 
+    return  <table> 
+        {this.getTotalMovieCount()}
       <tr>
         <th> Title </th>
         <th> Genre </th>
         <th> Stock </th>
         <th> Rate</th>
-        <button> Rate</button>
       </tr>
 
       <tr> 
-      <td>{this.getMovieTitle()}   </td>
-      <td>{this.getMovieGenre()}     </td>
+      <td>{this.getMovieTitle()} </td>
+      <td>{this.getMovieGenre()} </td>
+      <td>{this.getMovieStock()} </td>
+      <td>{this.getMovieGenre()} </td>
       </tr>
 
       
