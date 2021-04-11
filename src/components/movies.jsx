@@ -11,18 +11,33 @@ class Movies extends Component {
   }
 
   getMovieTitle(){
-    // return <ul> {this.state.movies.forEach((movie) => { return <li key={movie._id}> {movie.title} </li> })}</ul>
-
     return <ul> {this.state.movies.map((movie) => { return <li key={movie._id}> {movie.title} </li> })}</ul>
-
-
-
   }
 
+  getMovieGenre(){
+    return <ul> {this.state.movies.map((movie) => { return <li key={movie._id}> {movie.genre["name"]} </li> })}</ul>
+  }
+
+  
+
   render(){
-    return <div> 
-      {this.getMovieTitle()}  
-    </div>
+    return <table> 
+      <tr>
+        <th> Title </th>
+        <th> Genre </th>
+        <th> Stock </th>
+        <th> Rate</th>
+        <button> Rate</button>
+      </tr>
+
+      <tr> 
+      <td>{this.getMovieTitle()}   </td>
+      <td>{this.getMovieGenre()}     </td>
+      </tr>
+
+      
+      
+    </table>
   }
 
 }
