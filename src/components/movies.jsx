@@ -8,15 +8,20 @@ class Movies extends Component {
 
   handleDelete = movie => {
     console.log(movie)
+    //m is the this.state array, filter only returns what meets the condition, so here I am returning everything that does not equal to what I currently clicked 
     const movies = this.state.movies.filter(m => m._id !== movie._id)
-    this.setState({movies})
+    this.setState({movies: movies})
   }
 
   render(){
-    
+    const {length: count} = this.state.movies
+
+    if(count === 0) return <p> there are no movies in the database </p>
+
     return (
+      <React.Fragment>
+  <p> There are {count} movies in the database</p>
 <table className="table">
-  <p> There are {this.state.movies.length} movies in the database</p>
       <thead>
         <tr>
           <th>Title</th>
@@ -45,6 +50,8 @@ class Movies extends Component {
       </tbody>
 
     </table>
+      </React.Fragment>
+
     )
     
     
