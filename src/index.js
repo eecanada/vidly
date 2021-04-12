@@ -9,7 +9,7 @@ import Movies from './components/movies'
 
 ReactDOM.render(
   <React.StrictMode>
-    <Movies />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
