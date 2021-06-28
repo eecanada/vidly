@@ -12,11 +12,13 @@ class Movies extends Component {
     pageSize: 4,
     currentPage: 1,
     genres: [],
-    selectedGenre:null
+    selectedGenre:null,
+    hobbies: 'gym'
   };
 
   componentDidMount() {
-    this.setState({ movies: getMovies(), genres: getGenres() });
+    const genres = [{name:'All Genres'}, ...getGenres()]
+    this.setState({ movies: getMovies(), genres});
   }
 
   handleDelete = (movie) => {
@@ -39,11 +41,17 @@ class Movies extends Component {
   handlePageChange = (page) => {
     this.setState({ currentPage: page });
   };
+  
+  handleTestEvent = (hobbie) =>{
+    let code = hobbie
+    this.setState({hobbies: code})
+  }
 
   handleGenreSelect = (genre) => {
-    this.setState({selectedGenre:genre})
+    this.setState({selectedGenre:genre, currentPage: 1})
     console.log(genre);
   };
+
 
   render() {
     const { length: count } = this.state.movies;
@@ -51,13 +59,16 @@ class Movies extends Component {
 
     if (count === 0) return <p> there are no movies in the database </p>;
 
-    const filtered = selectedGenre ? allMovies.filter(m => m.genre._id === selectedGenre._id) : allMovies
+    const filtered = (selectedGenre && selectedGenre._id) ? allMovies.filter(m => m.genre._id === selectedGenre._id) : allMovies
 
     const movies = paginate(filtered, currentPage, pageSize);
+
+  
 
     return (
       <div className="row">
         <div className="col-3">
+        <button onClick={()=>this.handleTestEvent('sleeping')}>{this.state.hobbies}</button>
 
         
           <ListGroup
