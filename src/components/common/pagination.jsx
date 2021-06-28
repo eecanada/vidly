@@ -13,7 +13,7 @@ const Pagination = (props) => {
     <nav>
       <ul className="pagination">
         {pages.map((page) => (
-          <li
+          <li 
             key={page}
             className={page === currentPage ? 'page-item active' : 'page-item'}
           >
