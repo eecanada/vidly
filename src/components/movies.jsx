@@ -51,7 +51,6 @@ class Movies extends Component {
 
   handleGenreSelect = (genre) => {
     this.setState({ selectedGenre: genre, currentPage: 1 });
-    console.log(genre);
   };
 
   //'title' 
@@ -60,7 +59,6 @@ class Movies extends Component {
   };
 
   render() {
-    console.log(this.state.genres);
     const { length: count } = this.state.movies;
     const {
       pageSize,
