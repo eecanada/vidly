@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Input from './common/input';
 
 class LoginForm extends Component {
   state = {
@@ -8,36 +9,35 @@ class LoginForm extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-
     //call the server
     const username = this.username.current.value;
     console.log(username);
   };
 
-  handleChange = e =>{
-    const account = {...this.state.account}
-    account.username =  e.currentTarget.value
-    this.setState({account})
-  }
+  handleChange = (e) => {
+    const account = { ...this.state.account };
+    account[e.currentTarget.name] = e.currentTarget.value;
+    this.setState({ account });
+  };
   render() {
+    const { account } = this.state;
     return (
       <div>
         <h1>Login</h1>
         <form onSubmit={this.handleSubmit}>
+          <Input
+            name="username"
+            value={account.username}
+            label="Username"
+            onChange={this.handleChange}
+          />
           <div className="form-group">
-            <label htmlFor="username">Username</label>
-            <input
-              autoFocus
-              value={this.state.account.username}
+            <Input
+              name="password"
+              value={account.password}
+              label="Password"
               onChange={this.handleChange}
-              id="username"
-              type="text"
-              className="form-control"
             />
-          </div>
-          <div className="form-group">
-            <label htmlFor="password">Password</label>
-            <input type="password" className="form-control" />
           </div>
           <button className="btn btn-primary">Login</button>
         </form>
