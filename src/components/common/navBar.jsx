@@ -30,7 +30,7 @@ const NavBar = () => {
           </NavLink>
 
           <NavLink className="nav-item nav-link" to="/rentals">
-            Movies
+            Rentals
           </NavLink>
         </div>
       </div>
