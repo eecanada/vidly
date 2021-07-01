@@ -44,11 +44,6 @@ class Movies extends Component {
     this.setState({ currentPage: page });
   };
 
-  handleTestEvent = (hobbie) => {
-    let code = hobbie;
-    this.setState({ hobbies: code });
-  };
-
   handleGenreSelect = (genre) => {
     this.setState({ selectedGenre: genre, currentPage: 1 });
   };
@@ -90,10 +85,6 @@ class Movies extends Component {
     return (
       <div className="row">
         <div className="col-3">
-          <button onClick={() => this.handleTestEvent('sleeping')}>
-            {this.state.hobbies}
-          </button>
-
           <ListGroup
             items={this.state.genres}
             selectedItem={this.state.selectedGenre}
@@ -105,6 +96,7 @@ class Movies extends Component {
           <p> There are {totalCount} movies in the database</p>
 
           <MoviesTable
+         
             movies={movies}
             onLike={this.handleLike}
             onDelete={this.handleDelete}
