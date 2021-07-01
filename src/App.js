@@ -1,14 +1,15 @@
-import './App.css';
+import React, { Component } from 'react';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import Movies from '../src/components/movies';
 import NavBar from './components/common/navBar';
-import { Route, Switch, Redirect } from 'react-router-dom';
 import Customers from './components/customers';
 import Rentals from './components/rentals';
 import NotFound from './components/notFound';
+import './App.css';
 
 function App() {
   return (
-    <div className="container-fluid">
+    <React.Fragment>
       <NavBar />
 
       <main className="container">
@@ -21,7 +22,7 @@ function App() {
           <Redirect to="/not-found" />
         </Switch>
       </main>
-    </div>
+    </React.Fragment>
   );
 }
 
