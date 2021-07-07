@@ -7,10 +7,10 @@ const Input = (props) => {
       <input
         autoFocus
         value={props.value}
+        type={props.type}
         onChange={props.onChange}
         name={props.name}
         id={props.name}
-        type="text"
         className="form-control"
       />
 
