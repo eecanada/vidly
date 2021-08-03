@@ -28,7 +28,7 @@ class RegisterForm extends Form {
       }
     }
   };
-
+ 
   render() {
     return (
       <div>
