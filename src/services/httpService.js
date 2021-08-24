@@ -19,7 +19,7 @@ axios.interceptors.response.use(null, (error) => {
 function setJwt(jwt) {
   axios.defaults.headers.common['x-auth-token'] = jwt;
 }
-
+ 
 export default {
   get: axios.get,
   post: axios.post,
