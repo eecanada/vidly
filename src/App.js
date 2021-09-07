@@ -11,11 +11,9 @@ import LoginForm from './components/loginForm';
 import RegisterForm from './components/registerForm';
 import Logout from './components/logout';
 import auth from './services/authService';
-
 import ProtectedRoute from '../src/components/common/protectedRoute'
 import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
-import ProtectedRoute from './components/common/protectedRoute';
 
 class App extends Component {
   state = {};
