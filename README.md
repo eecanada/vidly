@@ -9,8 +9,6 @@
 
 * A CRUD movie database application that allows users to create movie listings. Users are able to update a movies, like, and even search for a movie. Only logged in users are able to make any changes to the movies.
 
-luxury real estate application that allows users to create listings of homes they are selling. Users are also able to search through homes using the Zillow API.
-
 # Technologies Used
 * JavaScript
 * CSS3
